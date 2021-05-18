@@ -7,6 +7,7 @@ import { Component,Input,Output,EventEmitter, OnInit } from '@angular/core';
 <button (click)="getSmaller()" title="smaller">-</button>
 <button (click)="getBigger()" title="bigger">+</button>
 <label [style.font-size.px]="size">FontSize: {{size}}px</label>
+<label (click)="OnTestClick()">Cickable Label</label>
 </div>`
    
 })
@@ -16,6 +17,10 @@ export class EventBindingComponent {
  
 @Output() sizeChange = new EventEmitter<number>();
  
+ OnTestClick(){
+alert("label Clicked");
+
+ }
 getSmaller() { this.resizeMe(-1); }
 getBigger() { this.resizeMe(+1); }
 resizeMe(delta: any) {
